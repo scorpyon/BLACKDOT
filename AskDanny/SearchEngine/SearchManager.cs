@@ -42,19 +42,21 @@ namespace SearchEngine
 
         private List<ISearchResult> GetResultsFromGoogle(HtmlDocument nodes)
         {
+            // Get the main search node on the google results page
             var searchNode = nodes.DocumentNode
                 .SelectNodes("//div")
                 .Where(x => x.Id == "search");
 
+            // Filter down to the individual results
             var resultNodes = searchNode.FirstOrDefault()
                 .ChildNodes
                 .FirstOrDefault()
                 .FirstChild
                 .ChildNodes;
 
-
-
             var result = new List<ISearchResult>();
+
+            // Filter through the results to obtain the info we need
             foreach (var resultNode in resultNodes)
             {
                 var titleNode = resultNode.ChildNodes.FindFirst("h3");
@@ -90,6 +92,8 @@ namespace SearchEngine
         {
             const string nodeParent = "//ol/li";
             const string resultNodeParent = "b_algo";
+
+            // Filter the site result for the bits we need here
             var resultNodes = nodes.DocumentNode
                 .SelectNodes(nodeParent)
                 .Where(x => x.Attributes["class"].Value == resultNodeParent);
