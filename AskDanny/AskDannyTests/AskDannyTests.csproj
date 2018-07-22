@@ -55,6 +55,7 @@
     <Compile Include="Integration\FileManagerTests.cs" />
     <Compile Include="Integration\SearchManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\SearchManagerTests.cs" />
     <Compile Include="Unit\SearchResultTests.cs" />
     <Compile Include="Unit\SearchCriteriaTests.cs" />
   </ItemGroup>

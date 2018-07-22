@@ -10,8 +10,11 @@
         <div class="search">
             <h1 class="mainTitle">AskDanny.com</h1>
             <h3 class="infoHeader">Enter the information you wish to search for in the box below and click the search button.</h3>
-            <div class="searchCriteriaTextBoxArea">@Html.TextBoxFor(m => m.SearchText, new { @class = "searchCriteria"})</div>
-            <div class="submitButtonDiv"><input type="submit" value="Search" class="searchButton" /></div>
+            <div id="searchInput" class="searchCriteriaTextBoxArea">@Html.TextBoxFor(m => m.SearchText, new { @class = "searchCriteria"})</div>
+            <div class="submitButtons">
+                <div class="submitButtonBing"><input type="button" id="submitButtonBing" value="Search (Bing)" class="searchButton" onclick="Search('bing')" /></div>
+                <div class="submitButtonGoogle"><input type="button" id="submitButtonGoogle"  value="Search (Google)" class="searchButton" onclick="Search('google')" /></div>
+            </div>
             <div class="jsonSection">
                 <div class="convertToJson"><input type="button" value="Export Json to File" class="exportJsonButton" onclick="location.href='@Url.Action("ConvertToJson", "Home",new { searchText = Model.SearchText })'"/>
                 </div>
@@ -40,6 +43,25 @@
         }
     </div>
 }
+
+<script>
+    function Search(site) {
+        var searchTerm = document.getElementById("SearchText").value;
+        var url = '/Home/Search/';
+        $.ajax({
+            url: url,
+            data: {
+                searchText: searchTerm,
+                site: site
+            },
+            type: 'GET',
+            success: function (data) {
+                $('body').empty();
+                $('body').append(data);
+            }
+        });
+    }
+</script>
 
 <link href="~/Content/search.css" rel="stylesheet" type="text/css" />
 

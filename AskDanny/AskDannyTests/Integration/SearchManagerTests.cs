@@ -13,7 +13,7 @@ namespace AskDannyTests.Integration
             var manager = new SearchManager();
             const string testString = "Danny";
 
-            var result = manager.ScrapeDataFromBing(testString);
+            var result = manager.ScrapeDataFrom(testString,SearchManager.Website.Bing);
 
             Assert.That(result.Contains(testString));
             Assert.That(result.Contains("Danny O'Donoghue"));
@@ -25,8 +25,8 @@ namespace AskDannyTests.Integration
             var manager = new SearchManager();
             const string testString = "Danny";
 
-            var resultHtml = manager.ScrapeDataFromBing(testString);
-            var result = manager.ConvertHtmlDataToResultList(resultHtml);
+            var resultHtml = manager.ScrapeDataFrom(testString,SearchManager.Website.Bing);
+            var result = manager.ConvertHtmlDataToResultList(resultHtml,SearchManager.Website.Bing);
 
             Assert.That(result.Count,Is.GreaterThan(0));
             Assert.That(result.FirstOrDefault().ResultTitle.Contains(testString));

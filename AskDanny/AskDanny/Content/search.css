@@ -34,17 +34,39 @@ h1 {
 }
 
 .searchButton {
-    margin: auto;
     font-weight: bold;
+    border-radius: 5px;
+    margin: auto;
+    max-width: 300px;
+    min-width: 150px;
     width: 100%;
-    max-width: 100%;
-    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-.submitButtonDiv {
+.submitButtons {
+    width: 70%;
+    height: 40px;
     margin: auto;
-    width: 300px;
-    margin-bottom: 10px;
+    min-width: 375px;
+    max-width: 500px;
+}
+
+.submitButtonBing {
+    float: left;
+    width: 48%;
+}
+
+.submitButtonGoogle {
+    float: right;
+    width: 48%;
+}
+
+#submitButtonBing {
+    background-color: #77FF77;
+}
+
+#submitButtonGoogle {
+    background-color: #77FF77;
 }
 
 .searchResultReminder {

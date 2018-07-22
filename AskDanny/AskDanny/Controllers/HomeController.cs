@@ -10,6 +10,8 @@ namespace AskDanny.Controllers
     public class HomeController : Controller
     {
         public static IList<ISearchResult> PreviousResults = new List<ISearchResult>();
+
+        [HttpGet]
         public ActionResult Index(SearchCriteria model)
         {
             if (model == null)
@@ -20,21 +22,20 @@ namespace AskDanny.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Search(SearchCriteria model)
+        public ActionResult Search(string searchText, string site)
         {
-            if (model == null)
+            var model = new SearchCriteria();
+            if (searchText == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", model);
             }
 
-            if (model.SearchText != null)
-            {
-                model.SearchResultReminder = $"You searched for the keywords: {model.SearchText}";
-                var search = new SearchManager();
-                model.SearchResults = search.GetSearchResultFrom(model.SearchText);
-                PreviousResults = model.SearchResults;
-            }
+            model.SearchText = searchText;
+            model.SearchResultReminder = $"You searched for the keywords: {searchText}";
+            var search = new SearchManager();
+            var website = search.GetSiteFromNameString(site);
+            model.SearchResults = search.GetSearchResultFrom(model.SearchText, website);
+            PreviousResults = model.SearchResults;
 
             return RedirectToAction("Index", model);
         }
