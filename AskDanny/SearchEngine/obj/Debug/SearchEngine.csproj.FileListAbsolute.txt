@@ -1,0 +1,8 @@
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\bin\Debug\SearchEngine.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\bin\Debug\SearchEngine.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\obj\Debug\SearchEngine.csprojResolveAssemblyReference.cache
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\obj\Debug\SearchEngine.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\obj\Debug\SearchEngine.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\bin\Debug\HtmlAgilityPack.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\bin\Debug\HtmlAgilityPack.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\SearchEngine\bin\Debug\HtmlAgilityPack.xml

@@ -1,0 +1,46 @@
+﻿@model AskDanny.Models.SearchCriteria
+
+@{
+    ViewBag.Title = "AskDanny.com";
+}
+
+@using (Html.BeginForm("Search","Home",FormMethod.Post))
+{
+    <fieldset>
+        <div class="search">
+            <h1 class="mainTitle">AskDanny.com</h1>
+            <h3 class="infoHeader">Enter the information you wish to search for in the box below and click the search button.</h3>
+            <div class="searchCriteriaTextBoxArea">@Html.TextBoxFor(m => m.SearchText, new { @class = "searchCriteria"})</div>
+            <div class="submitButtonDiv"><input type="submit" value="Search" class="searchButton" /></div>
+            <div class="jsonSection">
+                <div class="convertToJson"><input type="button" value="Export Json to File" class="exportJsonButton" onclick="location.href='@Url.Action("ConvertToJson", "Home",new { searchText = Model.SearchText })'"/>
+                </div>
+                <div class="importFromJson"><input type="button" value="Import Json from File" class="importJsonButton"onclick="location.href='@Url.Action("ImportFromJson", "Home",new { searchText = Model.SearchText })'"/>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="resultsTable">
+        <br/>
+        @if (Model.SearchResultReminder != null)
+        {
+            <div class="searchResultReminder">@Model.SearchResultReminder</div>
+        }
+        @if (Model.SearchResults != null)
+        {
+            foreach (var result in Model.SearchResults)
+            {
+                <div class="resultContainer">
+                    <div class="resultTitle"><a href="@result.ResultUrl">@result.ResultTitle</a></div>
+                    <div class="resultDescription">@result.ResultSummary</div>
+                    <div class="resultLink">@result.ResultUrl</div>
+                </div>
+            }
+        }
+    </div>
+}
+
+<link href="~/Content/search.css" rel="stylesheet" type="text/css" />
+
+

@@ -1,0 +1,10 @@
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\JsonManagement.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\JsonManagement.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\SearchEngine.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\HtmlAgilityPack.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\SearchEngine.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\HtmlAgilityPack.pdb
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\bin\Debug\HtmlAgilityPack.xml
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\obj\Debug\JsonManagement.csprojResolveAssemblyReference.cache
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\obj\Debug\JsonManagement.dll
+G:\WEBSITE WORK\BLACKDOT\AskDanny\JsonManager\obj\Debug\JsonManagement.pdb
